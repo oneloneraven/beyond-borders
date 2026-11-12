@@ -1,6 +1,6 @@
 # Infrastructure
 
-The DNS records for `wearebeyondborders.com` are managed here with [OpenTofu](https://opentofu.org), the open-source fork of Terraform (same HCL, providers and state format). The only things outside OpenTofu are the state bucket (it must exist before OpenTofu can use it) and the CI credentials below.
+The DNS records, TLS and HSTS, DNSSEC, CAA and security headers for `wearebeyondborders.com` are managed here with [OpenTofu](https://opentofu.org), the open-source fork of Terraform (same HCL, providers and state format). The only things outside OpenTofu are the state bucket (it must exist before OpenTofu can use it) and the CI credentials below.
 
 State lives in the R2 bucket `beyond-borders-tfstate`, never in git.
 
@@ -19,6 +19,7 @@ The records predate OpenTofu, so `imports.tf` adopts them by id. Once they're in
 2. Create the CI tokens below, the R2 state credentials, and the GitHub secrets and variables: `node <plugin>/skills/bootstrap/scripts/secrets.mjs cloudflare-tokens <project dir>` does the CI tokens and `secrets.mjs cloudflare-r2 <project dir>` the state credentials, or follow this page by hand.
 3. Run "Bootstrap OpenTofu state bucket".
 4. Run "Infra" (dispatch it, or merge a change under `infra/`).
+5. Add the DS record from `tofu output app_dnssec_ds_record` (or the Infra run's log) at the registrar.
 
 ### Cloudflare API tokens
 
@@ -69,3 +70,4 @@ Deliberately deleting the project's infrastructure:
 2. Locally, with the infra apply token and state credentials in your environment: `tofu init -backend-config="endpoints={s3=\"https://<account id>.r2.cloudflarestorage.com\"}"` then `tofu destroy`.
 3. Empty and delete the `beyond-borders-tfstate` bucket in the dashboard.
 4. Revoke the four Cloudflare tokens and the R2 credentials.
+5. Remove the DS record at the registrar.
