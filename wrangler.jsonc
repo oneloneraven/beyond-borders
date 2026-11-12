@@ -28,8 +28,12 @@
         "not_found_handling": "single-page-application",
         "run_worker_first": ["/api/*"],
       },
-      // Served on workers.dev until the domain moves to this Worker and gets its route.
-      "workers_dev": true,
+      "routes": [
+        {
+          "pattern": "wearebeyondborders.com/*",
+          "zone_name": "wearebeyondborders.com",
+        },
+      ],
     },
     "preview": {
       "vars": {

@@ -1,6 +1,6 @@
 # Infrastructure
 
-The DNS records, TLS and HSTS, DNSSEC, CAA and security headers for `wearebeyondborders.com` are managed here with [OpenTofu](https://opentofu.org), the open-source fork of Terraform (same HCL, providers and state format). The only things outside OpenTofu are the state bucket (it must exist before OpenTofu can use it) and the CI credentials below.
+The DNS records, TLS and HSTS, DNSSEC, CAA, security headers and the `www` redirect for `wearebeyondborders.com` are managed here with [OpenTofu](https://opentofu.org), the open-source fork of Terraform (same HCL, providers and state format). The only things outside OpenTofu are the state bucket (it must exist before OpenTofu can use it) and the CI credentials below.
 
 State lives in the R2 bucket `beyond-borders-tfstate`, never in git.
 
@@ -25,12 +25,12 @@ The records predate OpenTofu, so `imports.tf` adopts them by id. Once they're in
 
 Create each as an account-owned token with a one-year expiry, scoped to this account and, for zone permissions, to `wearebeyondborders.com` only.
 
-| Token       | GitHub secret                                        | Permissions                                                                                                                    |
-| ----------- | ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| Preview     | `CLOUDFLARE_PREVIEW_TOKEN` (repository)              | Account: Workers Scripts Edit, Account Settings Read                                                                           |
-| Deploy      | `CLOUDFLARE_DEPLOY_TOKEN` (environment `production`) | Account: Workers Scripts Edit, Account Settings Read. Zone: Workers Routes Edit                                                |
-| Infra plan  | `CLOUDFLARE_INFRA_PLAN_TOKEN` (repository)           | Account: Workers R2 Storage Read, Transform Rules Read. Zone: DNS Read, Zone Settings Read, Zone WAF Read, Cache Settings Read |
-| Infra apply | `CLOUDFLARE_INFRA_APPLY_TOKEN` (environment `infra`) | Account: Workers R2 Storage Edit, Transform Rules Edit. Zone: DNS Edit, Zone Settings Edit, Zone WAF Edit, Cache Settings Edit |
+| Token       | GitHub secret                                        | Permissions                                                                                                                                          |
+| ----------- | ---------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Preview     | `CLOUDFLARE_PREVIEW_TOKEN` (repository)              | Account: Workers Scripts Edit, Account Settings Read                                                                                                 |
+| Deploy      | `CLOUDFLARE_DEPLOY_TOKEN` (environment `production`) | Account: Workers Scripts Edit, Account Settings Read. Zone: Workers Routes Edit                                                                      |
+| Infra plan  | `CLOUDFLARE_INFRA_PLAN_TOKEN` (repository)           | Account: Workers R2 Storage Read, Transform Rules Read. Zone: DNS Read, Zone Settings Read, Zone WAF Read, Cache Settings Read, Single Redirect Read |
+| Infra apply | `CLOUDFLARE_INFRA_APPLY_TOKEN` (environment `infra`) | Account: Workers R2 Storage Edit, Transform Rules Edit. Zone: DNS Edit, Zone Settings Edit, Zone WAF Edit, Cache Settings Edit, Single Redirect Edit |
 
 Transform Rules is account-scoped, so the infra tokens' Transform Rules permission covers every zone in the account, not just `wearebeyondborders.com`.
 
