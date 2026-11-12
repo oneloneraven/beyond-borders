@@ -546,7 +546,7 @@ Run: `gh auth login`
 
 ### "Label 'xyz' does not exist"
 
-- Check available labels: `gh label list --repo ravendarque/ravendarque-beyond-borders`
+- Check available labels: `gh label list --repo ravendarque/beyond-borders`
 - Or omit the Labels parameter (it's optional)
 
 ### "Issue not found in project"
