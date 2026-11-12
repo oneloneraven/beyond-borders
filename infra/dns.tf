@@ -30,11 +30,25 @@ resource "cloudflare_dns_record" "github_pages" {
   proxied  = true
 }
 
+resource "cloudflare_dns_record" "app_apex" {
+  zone_id = local.zone_id
+  name    = var.app_zone_name
+  type    = "A"
+  content = "192.0.2.1"
+  ttl     = 1
+  proxied = true
+  comment = "Placeholder so the Worker route answers on this hostname; traffic never reaches this IP."
+
+  lifecycle {
+    prevent_destroy = true
+  }
+}
+
 resource "cloudflare_dns_record" "www" {
   zone_id = local.zone_id
   name    = "www.${var.app_zone_name}"
   type    = "CNAME"
-  content = "ravendarque.github.io"
+  content = var.app_zone_name
   ttl     = 1
   proxied = true
   settings = {
