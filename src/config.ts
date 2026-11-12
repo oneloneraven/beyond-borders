@@ -17,7 +17,7 @@ interface AppConfig {
 
   /**
    * Get the base URL for the application
-   * @returns Base URL (e.g., '/' or '/ravendarque-beyond-borders/')
+   * @returns Base URL (e.g., '/' or '/beyond-borders/')
    */
   getBaseUrl: () => string;
 
@@ -94,7 +94,7 @@ export const config = createConfig();
  * ```ts
  * const flagUrl = getAssetUrl('flags/palestine.png');
  * // Development: '/flags/palestine.png'
- * // Production: '/ravendarque-beyond-borders/flags/palestine.png'
+ * // Production: '/beyond-borders/flags/palestine.png'
  * ```
  */
 export function getAssetUrl(path: string): string {

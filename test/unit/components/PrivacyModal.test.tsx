@@ -51,7 +51,7 @@ describe('PrivacyModal', () => {
 
     const githubLink = screen.getByText(/here on github/i) as HTMLAnchorElement;
     expect(githubLink).toBeTruthy();
-    expect(githubLink.href).toContain('github.com/ravendarque/ravendarque-beyond-borders');
+    expect(githubLink.href).toContain('github.com/ravendarque/beyond-borders');
     expect(githubLink.target).toBe('_blank');
     expect(githubLink.rel).toBe('noopener noreferrer');
   });

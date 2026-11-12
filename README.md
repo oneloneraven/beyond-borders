@@ -1,10 +1,10 @@
 # Beyond Borders
 
-![CI](https://github.com/ravendarque/ravendarque-beyond-borders/actions/workflows/ci.yml/badge.svg)
-[![Fetch flags and generate metadata](https://github.com/ravendarque/ravendarque-beyond-borders/actions/workflows/fetch-flags.yml/badge.svg)](https://github.com/ravendarque/ravendarque-beyond-borders/actions/workflows/fetch-flags.yml)
-![Deploy](https://github.com/ravendarque/ravendarque-beyond-borders/actions/workflows/deploy-main.yml/badge.svg)
-![Beta Deploy](https://github.com/ravendarque/ravendarque-beyond-borders/actions/workflows/deploy-pr.yml/badge.svg)
-![Beta Cleanup](https://github.com/ravendarque/ravendarque-beyond-borders/actions/workflows/cleanup-pr-deployments.yml/badge.svg)
+![CI](https://github.com/ravendarque/beyond-borders/actions/workflows/ci.yml/badge.svg)
+[![Fetch flags and generate metadata](https://github.com/ravendarque/beyond-borders/actions/workflows/fetch-flags.yml/badge.svg)](https://github.com/ravendarque/beyond-borders/actions/workflows/fetch-flags.yml)
+![Deploy](https://github.com/ravendarque/beyond-borders/actions/workflows/deploy-main.yml/badge.svg)
+![Beta Deploy](https://github.com/ravendarque/beyond-borders/actions/workflows/deploy-pr.yml/badge.svg)
+![Beta Cleanup](https://github.com/ravendarque/beyond-borders/actions/workflows/cleanup-pr-deployments.yml/badge.svg)
 
 Add a circular, flag-colored border to your profile picture to show support
 for marginalized groups and selected causes.
