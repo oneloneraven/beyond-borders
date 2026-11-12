@@ -71,7 +71,7 @@ Beta deployments use **GitVersion-standard automatic semantic versioning**:
 - Calculated version: `1.0.3-alpha.3` (patch increments only)
 - Beta URL: `/beta/1.0.3-alpha.3/`
 
-See [VERSIONING.md](./VERSIONING.md) for complete details.
+Releases are cut from release labels, not GitVersion: see [versioning](../docs/versioning.md).
 
 ### Quick Version Check
 
@@ -88,15 +88,7 @@ gitversion
 
 ### Creating Version Tags
 
-Tags are created automatically by the `tag-release.yml` workflow when
-major/minor bumps are detected. You can also manually create tags:
-
-```bash
-git tag v1.1.0
-git push origin v1.1.0
-```
-
-**Note:** Patch versions are calculated automatically and don't need tags.
+Tags are cut by `release.yml` from each merged PR's release label ([versioning](../docs/versioning.md)).
 
 ## Use Cases
 

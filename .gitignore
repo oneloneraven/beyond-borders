@@ -46,6 +46,7 @@ test/e2e/**/*.spec.ts-snapshots/
 .env
 .env.*.local
 
+.bootstrap/
 .terraform/
 *.tfstate
 *.tfstate.*
