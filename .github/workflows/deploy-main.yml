@@ -71,16 +71,10 @@ jobs:
 
       - name: Deploy to gh-pages
         run: |
-          if [ -d "gh-pages-repo/beta" ]; then
-            mv gh-pages-repo/beta beta-backup
-          fi
           cd gh-pages-repo
           find . -maxdepth 1 ! -name '.git' ! -name '.' ! -name '..' -exec rm -rf {} +
           cd ..
           cp -r dist/* gh-pages-repo/
-          if [ -d "beta-backup" ]; then
-            mv beta-backup gh-pages-repo/beta
-          fi
           touch gh-pages-repo/.nojekyll
 
       - name: Commit and push

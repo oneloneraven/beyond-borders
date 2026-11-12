@@ -3,8 +3,6 @@
 ![CI](https://github.com/ravendarque/beyond-borders/actions/workflows/ci.yml/badge.svg)
 [![Fetch flags and generate metadata](https://github.com/ravendarque/beyond-borders/actions/workflows/fetch-flags.yml/badge.svg)](https://github.com/ravendarque/beyond-borders/actions/workflows/fetch-flags.yml)
 ![Deploy](https://github.com/ravendarque/beyond-borders/actions/workflows/deploy-main.yml/badge.svg)
-![Beta Deploy](https://github.com/ravendarque/beyond-borders/actions/workflows/deploy-pr.yml/badge.svg)
-![Beta Cleanup](https://github.com/ravendarque/beyond-borders/actions/workflows/cleanup-pr-deployments.yml/badge.svg)
 
 Add a circular, flag-colored border to your profile picture to show support
 for marginalized groups and selected causes.
@@ -43,11 +41,10 @@ flag-bordered profile picture:
 ## Status
 
 **✅ Live and deployed!** Production uses GitHub Pages **workflow mode**
-(artifact deployment) on every push to `main`. Versioned **beta previews**
-are committed under `gh-pages/beta/<semver>/` and managed by dedicated
-workflows.
+(artifact deployment) on every push to `main`. Every pull request gets a
+preview URL, posted on the PR.
 
-See `DEPLOYMENT.md` for full details on production vs beta infrastructure.
+See `DEPLOYMENT.md` for full details on the deployment infrastructure.
 
 PRD is defined in `beyond-borders-prd-0.1.md`.
 
