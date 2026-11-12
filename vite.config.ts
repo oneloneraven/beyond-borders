@@ -19,11 +19,7 @@ function getVersion(): string {
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  // Set base URL for deployment
-  // Priority: BASE_URL env var > production default > dev default
-  // BASE_URL is used for beta deployments (e.g., /beta/0.2.136-pr/)
-  // Production uses / for custom domain (wearebeyondborders.com)
-  base: process.env.BASE_URL || (process.env.NODE_ENV === 'production' ? '/' : '/'),
+  base: '/',
   plugins: [react()],
   define: {
     // Inject version at build time
