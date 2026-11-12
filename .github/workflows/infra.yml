@@ -52,7 +52,7 @@ jobs:
         run: |
           DELETES=$(tofu show -json tfplan | jq -r '(.resource_changes // [])[] | select(.change.actions | index("delete")) | .address')
           if [ -n "$DELETES" ]; then
-            echo "::error::This plan deletes or replaces resources. Deletes and replacements go through the teardown procedure in infra/README.md:"
+            echo "::error::This plan deletes or replaces resources. To apply it on purpose, run Infra by hand on main with allow_deletes (infra/README.md, \"Deleting resources\"):"
             echo "$DELETES"
             exit 1
           fi
