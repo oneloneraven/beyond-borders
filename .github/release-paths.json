@@ -1,0 +1,21 @@
+{
+  "noneAllowed": [
+    "docs/",
+    ".github/",
+    ".claude/",
+    ".cursorrules",
+    ".editorconfig",
+    ".gitattributes",
+    ".gitignore",
+    ".prettierignore",
+    ".prettierrc",
+    ".trivyignore",
+    "*.md",
+    "LICENSE",
+    "test/",
+    "eslint.config.cjs",
+    ".eslintrc.cjs",
+    "playwright.config.ts"
+  ],
+  "noneForbidden": ["infra/", "migrations/", "wrangler.jsonc"]
+}
