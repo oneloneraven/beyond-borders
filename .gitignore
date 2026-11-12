@@ -45,3 +45,8 @@ test/e2e/**/*.spec.ts-snapshots/
 # Env files (if used later)
 .env
 .env.*.local
+
+.terraform/
+*.tfstate
+*.tfstate.*
+infra/tfplan
