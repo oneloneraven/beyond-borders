@@ -47,3 +47,7 @@ test/e2e/**/*.spec.ts-snapshots/
 .env.*.local
 
 .bootstrap/
+.terraform/
+*.tfstate
+*.tfstate.*
+infra/tfplan
