@@ -28,7 +28,6 @@ resource "cloudflare_dns_record" "github_pages" {
   content  = each.value
   ttl      = 1
   proxied  = true
-  comment  = "GitHub Pages"
 }
 
 resource "cloudflare_dns_record" "www" {
@@ -51,7 +50,6 @@ resource "cloudflare_dns_record" "dkim" {
   content  = "${each.value}._domainkey.alias.proton.me"
   ttl      = 1
   proxied  = false
-  comment  = "Proton Pass"
   settings = {
     flatten_cname = false
   }
@@ -70,7 +68,6 @@ resource "cloudflare_dns_record" "mx" {
   priority = each.value.priority
   ttl      = 1
   proxied  = false
-  comment  = "Proton Pass"
 
   lifecycle {
     prevent_destroy = true
@@ -84,7 +81,6 @@ resource "cloudflare_dns_record" "spf" {
   content = "\"v=spf1 include:alias.proton.me ~all\""
   ttl     = 1
   proxied = false
-  comment = "Proton Pass"
 
   lifecycle {
     prevent_destroy = true
@@ -98,7 +94,6 @@ resource "cloudflare_dns_record" "dmarc" {
   content = "\"v=DMARC1; p=quarantine; pct=100; adkim=s; aspf=s\""
   ttl     = 1
   proxied = false
-  comment = "Proton Pass"
 
   lifecycle {
     prevent_destroy = true
@@ -112,7 +107,6 @@ resource "cloudflare_dns_record" "mail_domain_verification" {
   content = "\"pm-verification=kbdbuncrstppcfijdptluxaitvohap\""
   ttl     = 1
   proxied = false
-  comment = "Proton domain verification"
 
   lifecycle {
     prevent_destroy = true
