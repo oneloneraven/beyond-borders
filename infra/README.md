@@ -4,14 +4,14 @@ The DNS records, TLS and HSTS, DNSSEC, CAA, security headers and the `www` redir
 
 State lives in the R2 bucket `beyond-borders-tfstate`, never in git.
 
-The records predate OpenTofu, so `imports.tf` adopts them by id. Once they're in state, an import block is a no-op.
+The records predate OpenTofu and were adopted with import blocks, so the mail records' `for_each` keys are their Cloudflare record ids. Changing a key would delete and recreate the record.
 
 ## Workflows
 
-| Workflow              | Trigger                                             | What it does                                                            |
-| --------------------- | --------------------------------------------------- | ----------------------------------------------------------------------- |
-| `infra.yml`           | PR touching `infra/` (plan); push to `main` (apply) | Format check, validate, plan; refuses any plan that deletes or replaces |
-| `bootstrap-state.yml` | Manual                                              | Creates the state bucket if it's missing; safe to re-run                |
+| Workflow              | Trigger                                                     | What it does                                                                                                     |
+| --------------------- | ----------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `infra.yml`           | PR touching `infra/` (plan); push to `main` (apply); manual | Format check, validate, plan; refuses any plan that deletes or replaces, unless run by hand with `allow_deletes` |
+| `bootstrap-state.yml` | Manual                                                      | Creates the state bucket if it's missing; safe to re-run                                                         |
 
 ## Setup
 
@@ -56,6 +56,10 @@ PR plans run with the read-only pair, so code in a pull request can't rewrite st
 ### Variables
 
 `CLOUDFLARE_ACCOUNT_ID` as a repository variable. It isn't confidential.
+
+## Deleting resources
+
+`infra.yml` refuses a plan that deletes or replaces anything, so a merge that removes a resource fails its apply and changes nothing. To apply it on purpose, read the failed run's plan, then run "Infra" by hand on `main` with `allow_deletes` ticked. It runs in the `infra` environment, so only `main` can do it. Resources with `prevent_destroy` still refuse; removing that is the teardown below.
 
 ## Disaster recovery
 

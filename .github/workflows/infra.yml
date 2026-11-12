@@ -7,6 +7,11 @@ on:
     branches: [main]
     paths: ['infra/**', '.github/workflows/infra.yml']
   workflow_dispatch:
+    inputs:
+      allow_deletes:
+        description: 'Apply a plan that deletes or replaces resources (see infra/README.md)'
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -43,6 +48,7 @@ jobs:
       - name: Plan
         run: tofu plan -no-color -input=false -out=tfplan
       - name: Refuse unplanned deletes or replacements
+        if: ${{ !inputs.allow_deletes }}
         run: |
           DELETES=$(tofu show -json tfplan | jq -r '(.resource_changes // [])[] | select(.change.actions | index("delete")) | .address')
           if [ -n "$DELETES" ]; then

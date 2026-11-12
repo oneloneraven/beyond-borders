@@ -231,7 +231,6 @@ The application uses CSS custom properties for consistent spacing:
 1. **Image Preloading**: Preload flag images when entering step 3
 2. **Cache Management**: Use `Map` for image bitmap caching
 3. **Asset URLs**: Always use `getAssetUrl()` for dynamic asset paths
-   (GitHub Pages compatibility)
 
 ### Error Handling
 
@@ -387,7 +386,7 @@ When reviewing pull requests, verify the following:
 - [ ] Category codes derived from YAML category names (known mapping or
       slug); new categories need no script change
 - [ ] `flags.ts` is generated (not manually edited)
-- [ ] Asset URLs use `getAssetUrl()` for GitHub Pages compatibility
+- [ ] Asset URLs use `getAssetUrl()`
 - [ ] State management follows [Data Flow](#data-flow--state-management) patterns
 
 ### Accessibility Review
