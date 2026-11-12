@@ -11,3 +11,4 @@ old one's status becomes "Superseded by ADR-NNNN".
 | ------------------------------------------------------------- | --------------------------------------------------------- |
 | [0001](0001-record-architecture-decisions.md)                 | Record architecture decisions                             |
 | [0002](0002-screen-dependencies-against-bds-boycott-lists.md) | Screen dependencies and vendors against BDS boycott lists |
+| [0003](0003-host-on-cloudflare-workers.md)                    | Host on Cloudflare Workers                                |
