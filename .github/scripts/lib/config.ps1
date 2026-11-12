@@ -4,7 +4,7 @@
 # Project configuration (from project-config.yaml)
 $script:ProjectNumber = 2
 $script:Owner = "ravendarque"
-$script:Repo = "ravendarque/ravendarque-beyond-borders"
+$script:Repo = "ravendarque/beyond-borders"
 $script:ProjectId = "PVT_kwHOANLCeM4BFNzU"
 
 # Field IDs (from project-fields.json)

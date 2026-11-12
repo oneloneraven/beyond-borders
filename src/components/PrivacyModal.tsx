@@ -67,7 +67,7 @@ export function PrivacyModal({ open, onOpenChange }: PrivacyModalProps) {
             <p>
               This is an open source project so if you want to look through the code, it's{' '}
               <a
-                href="https://github.com/ravendarque/ravendarque-beyond-borders"
+                href="https://github.com/ravendarque/beyond-borders"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="dialog-link"

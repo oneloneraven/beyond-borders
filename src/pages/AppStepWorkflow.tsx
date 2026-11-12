@@ -697,7 +697,7 @@ export function AppStepWorkflow() {
             </Link>
             {' | '}
             <a
-              href="https://github.com/ravendarque/ravendarque-beyond-borders"
+              href="https://github.com/ravendarque/beyond-borders"
               target="_blank"
               rel="noopener noreferrer"
               className="footer-link"
@@ -713,7 +713,7 @@ export function AppStepWorkflow() {
           </div>
           <div className="footer-line3">
             <a
-              href={`https://github.com/ravendarque/ravendarque-beyond-borders/releases/tag/v${config.getVersion()}`}
+              href={`https://github.com/ravendarque/beyond-borders/releases/tag/v${config.getVersion()}`}
               target="_blank"
               rel="noopener noreferrer"
               className="footer-version"

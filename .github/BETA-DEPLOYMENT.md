@@ -43,8 +43,8 @@ This ensures only validated, tested code is deployed to beta.
   - **Version Deployment**: `https://wearebeyondborders.com/beta/<semver>/`
   - Example: `https://wearebeyondborders.com/beta/0.1.0/`
 - **GitHub Pages (Fallback):**
-  - **Beta Index**: `https://ravendarque.github.io/ravendarque-beyond-borders/beta/`
-  - **Version Deployment**: `https://ravendarque.github.io/ravendarque-beyond-borders/beta/<semver>/`
+  - **Beta Index**: `https://ravendarque.github.io/beyond-borders/beta/`
+  - **Version Deployment**: `https://ravendarque.github.io/beyond-borders/beta/<semver>/`
 
 ## Version Management
 
@@ -192,9 +192,7 @@ version. The configuration in `vite.config.ts`:
 
 ```typescript
 export default defineConfig({
-  base:
-    process.env.BASE_URL ||
-    (process.env.NODE_ENV === 'production' ? '/ravendarque-beyond-borders/' : '/'),
+  base: process.env.BASE_URL || (process.env.NODE_ENV === 'production' ? '/beyond-borders/' : '/'),
   // ... rest of config
 });
 ```

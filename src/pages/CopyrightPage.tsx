@@ -40,7 +40,7 @@ export function CopyrightPage() {
               Despite being protected by copyright, Beyond Borders is made available as open source
               software. The source code is{' '}
               <a
-                href="https://github.com/ravendarque/ravendarque-beyond-borders"
+                href="https://github.com/ravendarque/beyond-borders"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="ethics-link"
@@ -84,7 +84,7 @@ export function CopyrightPage() {
               These restrictions apply to all users, including those who fork this repository.
               Please refer to the{' '}
               <a
-                href="https://github.com/ravendarque/ravendarque-beyond-borders/blob/main/LICENSE"
+                href="https://github.com/ravendarque/beyond-borders/blob/main/LICENSE"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="ethics-link"
@@ -127,7 +127,7 @@ export function CopyrightPage() {
               If you have questions about copyright, licensing, or usage rights, please open an
               issue on the{' '}
               <a
-                href="https://github.com/ravendarque/ravendarque-beyond-borders"
+                href="https://github.com/ravendarque/beyond-borders"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="ethics-link"

@@ -4,7 +4,7 @@
 
 If you find a security vulnerability in this project, please report it privately rather than opening a public issue:
 
-- Use [GitHub's private vulnerability reporting](https://github.com/ravendarque/ravendarque-beyond-borders/security/advisories/new) for this repository, or
+- Use [GitHub's private vulnerability reporting](https://github.com/ravendarque/beyond-borders/security/advisories/new) for this repository, or
 - Email the maintainer at the address listed on the [GitHub profile](https://github.com/ravendarque).
 
 Please include:
