@@ -1,3 +1,7 @@
 ignoredBuiltDependencies:
   - esbuild
   - sharp
+
+# wrangler's local runtime downloads its platform binary at install.
+onlyBuiltDependencies:
+  - workerd

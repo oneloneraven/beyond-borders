@@ -1,0 +1,35 @@
+// Bindings are repeated in every environment: an environment that omits one does not inherit it.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "beyond-borders",
+  "main": "src/worker.ts",
+  "compatibility_date": "2026-10-01",
+  "workers_dev": false,
+  "observability": {
+    "enabled": true,
+  },
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": ["/api/*"],
+  },
+  "vars": {
+    "APP_ENV": "development",
+  },
+  "env": {
+    "production": {
+      "vars": {
+        "APP_ENV": "production",
+      },
+      "assets": {
+        "directory": "./dist",
+        "binding": "ASSETS",
+        "not_found_handling": "single-page-application",
+        "run_worker_first": ["/api/*"],
+      },
+      // Served on workers.dev until the domain moves to this Worker and gets its route.
+      "workers_dev": true,
+    },
+  },
+}
