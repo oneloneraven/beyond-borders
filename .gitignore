@@ -46,9 +46,10 @@ test/e2e/**/*.spec.ts-snapshots/
 .env
 .env.*.local
 
-.bootstrap/
+.bootstrap/*
 .terraform/
 *.tfstate
 *.tfstate.*
 infra/tfplan
 .wrangler/
+!.bootstrap/record.json
