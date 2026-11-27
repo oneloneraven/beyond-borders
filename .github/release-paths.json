@@ -1,21 +1,4 @@
 {
-  "noneAllowed": [
-    "docs/",
-    ".github/",
-    ".claude/",
-    ".cursorrules",
-    ".editorconfig",
-    ".gitattributes",
-    ".gitignore",
-    ".prettierignore",
-    ".prettierrc",
-    ".trivyignore",
-    "*.md",
-    "LICENSE",
-    "test/",
-    "eslint.config.cjs",
-    ".eslintrc.cjs",
-    "playwright.config.ts"
-  ],
+  "noneAllowed": ["docs/", ".github/", ".claude/", ".cursorrules", ".editorconfig", ".gitattributes", ".gitignore", ".prettierignore", ".prettierrc", ".trivyignore", "*.md", "LICENSE", "test/", "eslint.config.cjs", ".eslintrc.cjs", "playwright.config.ts", ".bootstrap/record.json"],
   "noneForbidden": ["infra/", "migrations/", "wrangler.jsonc"]
 }
